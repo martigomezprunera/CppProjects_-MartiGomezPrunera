@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string>
 
+//ESTOY REALIZANDO PRUEBAS CON EL GITHUB
+
 enum EnemyType{zombie, vampire, ghost, witch};
 
 struct Enemy
