@@ -1,10 +1,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <string>
+#include <ctime>
 
 //ESTOY REALIZANDO PRUEBAS CON EL GITHUB
 
-enum EnemyType{ZOMBIE, VAMPIRE, GHOST,  , MAX};   //Todas las CONSTANTES en MAYUS
+enum EnemyType{ZOMBIE, VAMPIRE, GHOST, WITCH , MAX};   //Todas las CONSTANTES en MAYUS
 
 struct Enemy
 {
@@ -25,7 +26,8 @@ struct Enemy
 	}
 };
 
-bool operator == (const Enemy &n1, const Enemy &n2)  //Ponemos "const" ya que es una constante y el "&" para pasar la variable por referencia. "ANOTHER LEVEL"
+//OPERADOR OVERLOAD
+bool operator==(const Enemy &n1, const Enemy &n2)  //Ponemos "const" ya que es una constante y el "&" para pasar la variable por referencia. "ANOTHER LEVEL"
 {
 	bool resultado = false;
 
@@ -39,5 +41,7 @@ bool operator == (const Enemy &n1, const Enemy &n2)  //Ponemos "const" ya que es
 
 void main()
 {
-
+	srand(static_cast<unsigned>(time(nullptr)));   //NUMERO RANDOM relacionado con el TIEMPO
+	const int MAX_ENEMIES{5};					   //CONSTANTES en C++
+	Enemy enemies[MAX_ENEMIES];
 }
