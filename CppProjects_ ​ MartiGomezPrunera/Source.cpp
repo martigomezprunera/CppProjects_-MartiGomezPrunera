@@ -4,16 +4,28 @@
 
 //ESTOY REALIZANDO PRUEBAS CON EL GITHUB
 
-enum EnemyType{zombie, vampire, ghost, witch};
+enum EnemyType{ZOMBIE, VAMPIRE, GHOST,  , MAX};   //Todas las CONSTANTES en MAYUS
 
 struct Enemy
 {
 	enum Enemytype type;
 	std::string name;
 	int health;
+
+	std::string getEnemyTypeString()
+	{
+		switch (type)			//En caso que nos toque un tipo de enemigo mostraremos por pantalla una u otra cosa
+		{
+			case EnemyType::ZOMBIE:		return "zombie";
+			case EnemyType::VAMPIRE:	return "vampire";
+			case EnemyType::GHOST:		return "ghost";
+			case EnemyType::WITCH:		return "witch";
+			default: return "";
+		}
+	}
 };
 
-bool operator == (Enemy n1, Enemy n2)
+bool operator == (const Enemy &n1, const Enemy &n2)  //Ponemos "const" ya que es una constante y el "&" para pasar la variable por referencia. "ANOTHER LEVEL"
 {
 	bool resultado = false;
 
