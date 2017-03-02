@@ -26,7 +26,7 @@ struct Enemy
 	}
 };
 
-//OPERADOR OVERLOAD
+//OPERADOR OVERLOADzzzz
 bool operator==(const Enemy &n1, const Enemy &n2)  //Ponemos "const" ya que es una constante y el "&" para pasar la variable por referencia. "ANOTHER LEVEL"
 {
 	bool resultado = false;
